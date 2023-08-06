@@ -56,7 +56,7 @@ export default class UsersController {
   }
   static async apiPostUser(req, res, next) {
     try {
-      const password = req.body.password
+      const pass = req.body.pass
       const email = req.body.email
       const userInfo = {
         name: req.body.name,
@@ -64,7 +64,7 @@ export default class UsersController {
       }
 
       const UserResponse = await UsersDAO.addUser(
-        password,
+        pass,
         userInfo,
         email,
         )
